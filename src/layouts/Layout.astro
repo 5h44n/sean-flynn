@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { SITE_TITLE } from "../consts";
+import Panels from "../components/Panels.astro";
 
 const { title } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -17,8 +18,8 @@ const links = [
   <title>{title ? `${title} | ${SITE_TITLE}` : SITE_TITLE}</title>
 </head>
 <body class="overflow-x-hidden bg-white text-black">
+  <Panels />
   <header class="sticky top-0 z-10 flex items-baseline justify-between bg-white px-4 py-4 sm:px-8">
-    <div class="racing-stripe" aria-hidden="true"></div>
     <a href="/" class="text-xl hover:opacity-60">{SITE_TITLE}</a>
     <nav class="flex gap-x-6">
       {links.map(({ href, label }) => (

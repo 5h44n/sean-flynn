@@ -8,38 +8,3 @@ img {
   max-width: 600px;
   height: auto;
 }
-
-/* Diagonal red, green and blue stripes cutting across the top right corner.
-   --d is the distance from the corner to the nearest stripe, large enough
-   that the stripes pass below the nav tabs instead of through them. */
-.racing-stripe {
-  --d: 145px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  width: 18rem;
-  height: 18rem;
-  pointer-events: none;
-  background: linear-gradient(
-    to top right,
-    transparent calc(100% - var(--d) - 35px),
-    #ff0000 calc(100% - var(--d) - 35px),
-    #ff0000 calc(100% - var(--d) - 30px),
-    transparent calc(100% - var(--d) - 30px),
-    transparent calc(100% - var(--d) - 20px),
-    #008000 calc(100% - var(--d) - 20px),
-    #008000 calc(100% - var(--d) - 15px),
-    transparent calc(100% - var(--d) - 15px),
-    transparent calc(100% - var(--d) - 5px),
-    #0000ee calc(100% - var(--d) - 5px),
-    #0000ee calc(100% - var(--d)),
-    transparent calc(100% - var(--d))
-  );
-}
-
-@media (min-width: 640px) {
-  .racing-stripe {
-    --d: 160px;
-  }
-}

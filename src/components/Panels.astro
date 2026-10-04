@@ -1,0 +1,78 @@
+---
+// Decorative flat "3D printed" panels fixed to the sides of the page,
+// after the printed shapes screwed onto the edges of Sean's canvases.
+---
+<div class="panels panels-left" aria-hidden="true">
+  <svg class="panel w-2.5 sm:w-24" viewBox="0 0 90 140" style="--edge: #c9c9c5">
+    <path d="M0 0H90V50H60V95H30V140H0Z" fill="#f4f4f1" />
+    <g fill="#d6d6d2" stroke="#a9a9a5" stroke-width="0.6">
+      <circle cx="14" cy="14" r="3.2" />
+      <circle cx="76" cy="36" r="3.2" />
+      <circle cx="14" cy="124" r="3.2" />
+    </g>
+    <path d="M11.8 11.8l4.4 4.4M73.8 33.8l4.4 4.4M11.8 121.8l4.4 4.4" stroke="#8d8d89" stroke-width="0.9" />
+  </svg>
+  <svg class="panel w-2.5 sm:w-20" viewBox="0 0 80 30" style="--edge: #b82c5c">
+    <rect width="80" height="30" fill="#f0457f" />
+  </svg>
+</div>
+
+<div class="panels panels-right" aria-hidden="true">
+  <svg class="panel w-2.5 sm:w-11" viewBox="0 0 44 150" style="--edge: #357a3a">
+    <clipPath id="lens"><path d="M44 0A44 75 0 0 0 44 150Z" /></clipPath>
+    <g clip-path="url(#lens)">
+      <rect width="44" height="150" fill="#58b35c" />
+      <path d="M0 0H44V62L4 48Z" fill="#2f7fd6" />
+    </g>
+    <circle cx="34" cy="110" r="3" fill="#4a9a4e" stroke="#357a3a" stroke-width="0.6" />
+    <path d="M32 108l4 4" stroke="#2b632f" stroke-width="0.9" />
+  </svg>
+  <svg class="panel w-2.5 sm:w-11" viewBox="0 0 44 150" style="--edge: #357a3a">
+    <path d="M44 0A44 75 0 0 0 44 150Z" fill="#58b35c" />
+    <g fill="#4a9a4e" stroke="#357a3a" stroke-width="0.6">
+      <circle cx="34" cy="40" r="3" />
+      <circle cx="34" cy="110" r="3" />
+    </g>
+    <path d="M32 38l4 4M32 108l4 4" stroke="#2b632f" stroke-width="0.9" />
+  </svg>
+  <svg class="panel w-2.5 sm:w-11" viewBox="0 0 44 150" style="--edge: #357a3a">
+    <path d="M44 0A44 75 0 0 0 44 150Z" fill="#58b35c" />
+    <g fill="#4a9a4e" stroke="#357a3a" stroke-width="0.6">
+      <circle cx="34" cy="40" r="3" />
+      <circle cx="34" cy="110" r="3" />
+    </g>
+    <path d="M32 38l4 4M32 108l4 4" stroke="#2b632f" stroke-width="0.9" />
+  </svg>
+</div>
+
+<style>
+  /* Sits behind the page content, so artworks cover the panels where they meet */
+  .panels {
+    position: fixed;
+    top: 5rem;
+    bottom: 2rem;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+  }
+  .panels-left {
+    left: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    --dx: 1px;
+  }
+  .panels-right {
+    right: 0;
+    align-items: flex-end;
+    justify-content: space-around;
+    --dx: -1px;
+  }
+  /* Stacked hard shadows read as the printed thickness; the last is the cast shadow */
+  .panel {
+    height: auto;
+    filter: drop-shadow(var(--dx) 1px 0 var(--edge)) drop-shadow(var(--dx) 1px 0 var(--edge))
+      drop-shadow(var(--dx) 1px 0 var(--edge)) drop-shadow(var(--dx) 1px 0 var(--edge))
+      drop-shadow(var(--dx) 1px 0 var(--edge)) drop-shadow(0 5px 6px rgb(0 0 0 / 0.22));
+  }
+</style>
