@@ -5,8 +5,8 @@ import { SITE_TITLE } from "../consts";
 const { title } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const links = [
-  { href: "/about", label: "About" },
   { href: "/", label: "Artworks" },
+  { href: "/about", label: "About" },
 ];
 ---
 <html lang="en">
