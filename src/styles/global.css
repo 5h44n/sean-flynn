@@ -9,14 +9,37 @@ img {
   height: auto;
 }
 
-/* Diagonal red, green and blue stripes cutting across the top right corner, behind the nav text */
+/* Diagonal red, green and blue stripes cutting across the top right corner.
+   --d is the distance from the corner to the nearest stripe, large enough
+   that the stripes pass below the nav tabs instead of through them. */
 .racing-stripe {
+  --d: 145px;
   position: absolute;
   top: 0;
   right: 0;
   z-index: -1;
-  width: 9rem;
-  height: 9rem;
+  width: 18rem;
+  height: 18rem;
   pointer-events: none;
-  background: linear-gradient(to top right, transparent 50%, #ff0000 50%, #ff0000 57%, transparent 57%, transparent 61%, #00ff00 61%, #00ff00 68%, transparent 68%, transparent 72%, #0000ee 72%, #0000ee 79%, transparent 79%);
+  background: linear-gradient(
+    to top right,
+    transparent calc(100% - var(--d) - 42px),
+    #ff0000 calc(100% - var(--d) - 42px),
+    #ff0000 calc(100% - var(--d) - 32px),
+    transparent calc(100% - var(--d) - 32px),
+    transparent calc(100% - var(--d) - 26px),
+    #00ff00 calc(100% - var(--d) - 26px),
+    #00ff00 calc(100% - var(--d) - 16px),
+    transparent calc(100% - var(--d) - 16px),
+    transparent calc(100% - var(--d) - 10px),
+    #0000ee calc(100% - var(--d) - 10px),
+    #0000ee calc(100% - var(--d)),
+    transparent calc(100% - var(--d))
+  );
+}
+
+@media (min-width: 640px) {
+  .racing-stripe {
+    --d: 160px;
+  }
 }
