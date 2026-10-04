@@ -4,7 +4,7 @@
 // Each piece is a whole shape pushed partly off screen, so it overhangs the page edge.
 ---
 <div class="panels panels-left" aria-hidden="true">
-  <svg class="panel w-5 -translate-x-1/4 sm:w-32" viewBox="0 0 90 140" style="--edge: #c9c9c5">
+  <svg class="panel w-14 -translate-x-1/4 sm:w-32" viewBox="0 0 90 140" style="--edge: #c9c9c5">
     <path d="M0 0H90V50H60V95H30V140H0Z" fill="#f4f4f1" />
     <g fill="#d6d6d2" stroke="#a9a9a5" stroke-width="0.6">
       <circle cx="45" cy="14" r="3.2" />
@@ -13,7 +13,7 @@
     </g>
     <path d="M42.8 11.8l4.4 4.4M73.8 33.8l4.4 4.4M42.8 77.8l4.4 4.4" stroke="#8d8d89" stroke-width="0.9" />
   </svg>
-  <svg class="panel w-4 -translate-x-[30%] sm:w-14" viewBox="0 0 40 110" style="--edge: #0000a8">
+  <svg class="panel w-8 -translate-x-[30%] sm:w-14" viewBox="0 0 40 110" style="--edge: #0000a8">
     <rect width="40" height="110" fill="#0000ee" />
     <g fill="#0000c8" stroke="#00008f" stroke-width="0.6">
       <circle cx="26" cy="16" r="3.2" />
@@ -21,7 +21,7 @@
     </g>
     <path d="M23.8 13.8l4.4 4.4M23.8 91.8l4.4 4.4" stroke="#000070" stroke-width="0.9" />
   </svg>
-  <svg class="panel w-6 -translate-x-[35%] sm:w-28" viewBox="0 0 80 30" style="--edge: #c2156b">
+  <svg class="panel w-16 -translate-x-[35%] sm:w-28" viewBox="0 0 80 30" style="--edge: #c2156b">
     <rect width="80" height="30" fill="#ff1f8f" />
     <g fill="#e0147a" stroke="#a80f5b" stroke-width="0.6">
       <circle cx="44" cy="15" r="3.2" />
@@ -32,7 +32,7 @@
 </div>
 
 <div class="panels panels-right" aria-hidden="true">
-  <svg class="panel w-6 translate-x-[35%] sm:w-28" viewBox="0 0 80 30" style="--edge: #c2156b">
+  <svg class="panel w-16 translate-x-[35%] sm:w-28" viewBox="0 0 80 30" style="--edge: #c2156b">
     <rect width="80" height="30" fill="#ff1f8f" />
     <g fill="#e0147a" stroke="#a80f5b" stroke-width="0.6">
       <circle cx="12" cy="15" r="3.2" />
@@ -40,7 +40,7 @@
     </g>
     <path d="M9.8 12.8l4.4 4.4M33.8 12.8l4.4 4.4" stroke="#8a0c4a" stroke-width="0.9" />
   </svg>
-  <svg class="panel w-5 translate-x-1/4 sm:w-28" viewBox="0 0 70 110" style="--edge: #c9c9c5">
+  <svg class="panel w-14 translate-x-1/4 sm:w-28" viewBox="0 0 70 110" style="--edge: #c9c9c5">
     <path d="M0 20H20V0H70V110H20V85H0Z" fill="#f4f4f1" />
     <g fill="#d6d6d2" stroke="#a9a9a5" stroke-width="0.6">
       <circle cx="32" cy="14" r="3.2" />
@@ -49,7 +49,7 @@
     </g>
     <path d="M29.8 11.8l4.4 4.4M9.8 49.8l4.4 4.4M29.8 93.8l4.4 4.4" stroke="#8d8d89" stroke-width="0.9" />
   </svg>
-  <svg class="panel w-5 translate-x-1/4 sm:w-32" viewBox="0 0 90 140" style="--edge: #0000a8">
+  <svg class="panel w-14 translate-x-1/4 sm:w-32" viewBox="0 0 90 140" style="--edge: #0000a8">
     <path d="M60 0H90V140H0V95H30V50H60Z" fill="#0000ee" />
     <g fill="#0000c8" stroke="#00008f" stroke-width="0.6">
       <circle cx="14" cy="118" r="3.2" />
@@ -61,12 +61,12 @@
 </div>
 
 <style>
-  /* Sits behind the page content, so artworks cover the panels where they meet */
+  /* Sits above the page content (below the header), so panels lap over the artworks where they meet */
   .panels {
     position: fixed;
     top: 5rem;
     bottom: 2rem;
-    z-index: -1;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     pointer-events: none;
