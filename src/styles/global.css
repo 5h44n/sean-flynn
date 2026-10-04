@@ -8,3 +8,15 @@ img {
   max-width: 600px;
   height: auto;
 }
+
+/* Diagonal stripe cutting across the top right corner, behind the nav text */
+.racing-stripe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 9rem;
+  height: 9rem;
+  pointer-events: none;
+  background: linear-gradient(to top right, transparent 60%, #0000ee 60%, #0000ee 72%, transparent 72%);
+}
